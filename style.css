@@ -33,7 +33,7 @@ div.main {
     justify-content: center;
     align-items: center;
 
-    /* display: none; */
+    display: none;
 
 }
 
@@ -66,6 +66,41 @@ input[type='text'], input[type='number'] {
     border-radius: 20px;
 }
 
+.modal .checkbox-container {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    border: 1px gray solid;
+    border-radius: 5px;
+    width: 25px;
+    height: 25px;
+    position: relative;
+
+}
+
+input[type="checkbox"]::before {
+    content: '\2713';
+    font-size: 30px;
+    font-weight: 600;
+    position: absolute;
+    top: -9px;
+    right: 0;
+    visibility: hidden;
+}
+
+input[type='checkbox']:checked::before {
+    visibility: visible;
+}
+
+
+
+
+
 form div+div {
     margin-top: 15px;
 }
@@ -74,7 +109,7 @@ label {
     font-size: 20px;
 }
 
-.modal .close-button {
+.modal .modal-close-button {
     position: absolute;
     top: 0;
     right: 10px;
