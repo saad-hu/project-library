@@ -15,14 +15,28 @@
 
     <div class="main">
         <button type="button" class="add-book-button">Add Book</button>
+
+        <div class="cards">
+            <div class="card not-read">
+                <div class="book-title-card">Lord of The Ringssssss</div>
+                <div class="book-author-card">JJ Tolkein</div>
+                <div class="book-pages-card not-read">485</div>
+                <div class="book-read-card not-read">Not Read</div>
+            </div>
+        </div>
+        
     </div>
+
+
+
 
     <!-- modal -->
     <div class="modal">
         <div class="modal-content">
             <div class="modal-close-button">+</div>
             <div class="modal-heading">Add Book</div>
-            <form action="">
+
+            <form id="user-book">
                 <div>
                     <input type="text" name="book_title" id="book_title" placeholder="Title">
                 </div>
@@ -38,6 +52,10 @@
                  <div class="checkbox-container">
                     <label for="read">Have you read it?</label>
                     <input type="checkbox" name="read" id="read">
+                 </div>
+
+                 <div class="submit-button">
+                    <button type="submit">Add</button>
                  </div>
                  
             </form>
