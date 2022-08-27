@@ -1,6 +1,7 @@
 //reference to the cards section
 let cards = document.querySelector('.cards');
 
+
 //this is a library of all the book objects
 let library = [];
 
@@ -38,7 +39,12 @@ Book.prototype.addBooktoDOM = function() {
 
     let read = document.createElement('div');
     read.classList.add('book-read-card');
-    read.textContent = (this.read === true ? 'Read' : 'Not Read');
+    if(this.read === false) {
+        card.classList.add('not-read');
+        read.classList.add('not-read');
+        read.textContent = 'Not Read';
+    }
+    else read.textContent = 'Read'
     card.appendChild(read);
 
     //now appending the single book card to the cards element which contains all the cards
@@ -55,6 +61,13 @@ let myBook = new Book('Lord of the Rings', 'JJ Tolkein', 485, false);
 
 myBook.addBookToLibrary();
 myBook.addBooktoDOM();
+
+myBook = new Book('Harry Potter', 'Brad Pitt', 800, true);
+myBook.addBookToLibrary();
+myBook.addBooktoDOM();
+
+
+
 
 
 //form portion

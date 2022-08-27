@@ -54,6 +54,10 @@ header {
     gap: 15px;
 }
 
+.card.not-read {
+    background-image: linear-gradient(#f87171, #fca5a5);
+}
+
 .card div:not(.card div:last-child) {
     border-bottom: 1px solid rgb(0, 0, 0);
 }
@@ -66,8 +70,8 @@ header {
     cursor: pointer;
 }
 
-.card.not-read {
-    background-image: linear-gradient(#f87171, #fca5a5);
+.book-read-card:hover {
+    background-color: #11813a;
 }
 
 .book-read-card.not-read {
@@ -76,6 +80,9 @@ header {
     color: var(--themebgGray);
 }
 
+.book-read-card.not-read:hover {
+    background-color: #ad1c1c;
+}
 
 /* CSS for modal */
 .modal {
