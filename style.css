@@ -44,6 +44,7 @@ header {
     padding: 30px 15px;
     font-size: 22px;
     text-align: center;
+    position: relative;
 
     width: clamp(300px, 25vw, 450px);
 
@@ -90,7 +91,17 @@ header {
 
 .delete-book {
     cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 32px;
+    height: 32px;
+    border: none !important;
+    background-image: url(./images/delete-blackBG-124x124.png);
+    background-repeat: no-repeat;
+    background-size: 32px 32px;
 }
+
 
 /* CSS for modal */
 .modal {

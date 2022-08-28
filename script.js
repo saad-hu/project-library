@@ -35,12 +35,21 @@ Book.prototype.addBooktoDOM = function() {
     authorNode.textContent = this.author;
     card.appendChild(authorNode);
 
-    
+
     let pagesNode = document.createElement('div');
     pagesNode.classList.add('book-pages-card');
     pagesNode.textContent = this.pages;
     card.appendChild(pagesNode);
 
+
+    let deleteCardButton = document.createElement('div');
+    deleteCardButton.classList.add('delete-book');
+    //adding eventListner to the delete button
+    deleteCardButton.addEventListener('click', () => {
+        deleteBook(deleteCardButton);
+    });
+    card.appendChild(deleteCardButton);
+    
 
     let readNode = document.createElement('div');
     readNode.classList.add('book-read-card');
@@ -57,15 +66,6 @@ Book.prototype.addBooktoDOM = function() {
     card.appendChild(readNode);
 
 
-    let deleteCardButton = document.createElement('div');
-    deleteCardButton.classList.add('delete-book');
-    deleteCardButton.textContent = 'Delete';
-    //adding eventListner to the delete button
-    deleteCardButton.addEventListener('click', () => {
-        deleteBook(deleteCardButton);
-    });
-    card.appendChild(deleteCardButton);
-
     // now appending the single book card to the cards element which contains all the cards.
     cards.appendChild(card);
 }
@@ -77,7 +77,6 @@ Book.prototype.addBookToLibrary = function() {
 
 
 let myBook = new Book('Lord of the Rings', 'JJ Tolkein', 485, false);
-
 myBook.addBooktoDOM();
 myBook.addBookToLibrary();
 
