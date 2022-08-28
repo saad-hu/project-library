@@ -70,6 +70,10 @@ header {
     cursor: pointer;
 }
 
+.book-read-card::selection {
+    text-decoration: none;
+}
+
 .book-read-card:hover {
     background-color: #11813a;
 }
@@ -82,6 +86,10 @@ header {
 
 .book-read-card.not-read:hover {
     background-color: #ad1c1c;
+}
+
+.delete-book {
+    cursor: pointer;
 }
 
 /* CSS for modal */
