@@ -80,7 +80,7 @@ header {
 }
 
 .card div:not(.card div:last-child) {
-    border-bottom: 1px solid rgb(0, 0, 0);
+    border-bottom: 1px solid grey;
 }
 
 .book-read-card {
