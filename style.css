@@ -130,6 +130,13 @@ header {
     transform: rotate(0deg);
 }
 
+div.note {
+    font-size: 10px;
+    width: 30%;
+    position: absolute;
+    top: 2px;
+    right: 0px;
+}
 
 
 /* CSS for modal */
