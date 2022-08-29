@@ -86,7 +86,6 @@ Book.prototype.toggleReadStatus = function(readReference, cardReference) {
     readReference.textContent = library[index].read === true ? 'Read' : 'Not Read';
 };
 
-
 Book.prototype.deleteBook = function(deleteButtonReference) {
     //deleting from library
     let index = deleteButtonReference.parentNode.id;
@@ -101,15 +100,15 @@ Book.prototype.deleteBook = function(deleteButtonReference) {
 
 
 
-let myBook = new Book('Lord of the Rings', 'JJ Tolkein', 485, false);
-myBook.addBooktoDOM();
-myBook.addBookToLibrary();
+// example books
+let exampleBook1 = new Book('The Lord of the Rings', 'J. R. R. Tolkien', 400, true);
+exampleBook1.addBooktoDOM();
+exampleBook1.addBookToLibrary();
 
 
-myBook = new Book('Harry Potter', 'Brad Pitt', 800, true);
-myBook.addBooktoDOM();
-myBook.addBookToLibrary();
-
+let exampleBook2 = new Book('The Martian', 'Andy Weir', 370, false);
+exampleBook2.addBooktoDOM();
+exampleBook2.addBookToLibrary();
 
 
 function updateIdOfAllCards() {
