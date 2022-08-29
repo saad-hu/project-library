@@ -46,7 +46,7 @@ Book.prototype.addBooktoDOM = function() {
     deleteCardButton.classList.add('delete-book');
     //adding eventListner to the delete button
     deleteCardButton.addEventListener('click', () => {
-        deleteBook(deleteCardButton);
+        this.deleteBook(deleteCardButton);
     });
     card.appendChild(deleteCardButton);
     
@@ -61,7 +61,7 @@ Book.prototype.addBooktoDOM = function() {
     else readNode.textContent = 'Read'
     //adding eventistener to the read button
     readNode.addEventListener('click', (event) => {
-        toggleReadStatus(readNode, readNode.parentNode);
+        this.toggleReadStatus(readNode, readNode.parentNode);
     })
     card.appendChild(readNode);
 
@@ -75,6 +75,31 @@ Book.prototype.addBookToLibrary = function() {
     library.push(this);
 }
 
+Book.prototype.toggleReadStatus = function(readReference, cardReference) {
+
+    cardReference.classList.toggle('not-read');
+    readReference.classList.toggle('not-read');
+    //the index of the book object clicked in the library is this book node's id
+    let index = cardReference.id;
+    //changing the read status of the book object in the library
+    library[index].read = !library[index].read;
+    readReference.textContent = library[index].read === true ? 'Read' : 'Not Read';
+};
+
+
+Book.prototype.deleteBook = function(deleteButtonReference) {
+    //deleting from library
+    let index = deleteButtonReference.parentNode.id;
+    library.splice(index,1);
+
+    //since library is updated, the index of all the books will be changed(-1). we have to update the id of each book in the DOM accodingly. updateIdOfCards does this
+    updateIdOfAllCards();
+
+    //deleting book from DOM
+    cards.removeChild(deleteButtonReference.parentNode);
+}
+
+
 
 let myBook = new Book('Lord of the Rings', 'JJ Tolkein', 485, false);
 myBook.addBooktoDOM();
@@ -87,29 +112,9 @@ myBook.addBookToLibrary();
 
 
 
-function toggleReadStatus(readReference, cardReference) {
 
-    cardReference.classList.toggle('not-read');
-    readReference.classList.toggle('not-read');
-    //the index in library of the book object clicked is this book node's id
-    let index = cardReference.id;
-    //changing the read status of the book object in the library
-    library[index].read = !library[index].read;
-    readReference.textContent = library[index].read === true ? 'Read' : 'Not Read';
-}
 
-function deleteBook(deleteButtonReference) {
 
-    //deleting from library
-    let index = deleteButtonReference.parentNode.id;
-    library.splice(index,1);
-
-    //since library is updated, the index of all the books will be changed(-1). we have to update the id of each book in the DOM accodingly. updateIdOfCards does this
-    updateIdOfAllCards();
-
-    //deleting book from DOM
-    cards.removeChild(deleteButtonReference.parentNode);
-}
 
 function updateIdOfAllCards() {
     let everyCardList = document.querySelectorAll('.card');
