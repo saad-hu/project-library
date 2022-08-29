@@ -25,8 +25,28 @@ body {
 
 header {
     background-color: var(--headerbgColor);
-    height: 20vh;
-    padding: 10px;
+    padding: 20px;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.add-book-button {
+    margin: 10px auto;
+    font-size: 25px;
+    padding: 5px 10px;
+    background-color: white;
+    border: 4px #374151 solid;
+    border-radius: 10px;
+    
+}
+
+.add-book-button:hover {
+    background-color: 
+    #f3f4f6;
 }
 
 .cards {
@@ -102,6 +122,15 @@ header {
     background-size: 32px 32px;
 }
 
+.delete-book:hover {
+    transform: rotate(20deg);
+}
+
+.delete-book:active {
+    transform: rotate(0deg);
+}
+
+
 
 /* CSS for modal */
 .modal {
@@ -115,17 +144,15 @@ header {
     align-items: center;
 
     display: none;
-
 }
-
 
 .modal-content {
     width: 400px;
     background-color: var(--themebgGray);
+    border-radius: 10px;
     padding: 40px;
     text-align: center;
-    position: relative;
-    
+    position: relative;   
 }
 
 .modal-heading {
@@ -161,7 +188,6 @@ input[type="checkbox"] {
     width: 25px;
     height: 25px;
     position: relative;
-
 }
 
 input[type="checkbox"]::before {
@@ -179,7 +205,7 @@ input[type='checkbox']:checked::before {
 }
 
 form div+div {
-    margin-top: 15px;
+    margin-top: 20px;
 }
 
 label {
@@ -194,4 +220,18 @@ label {
     transform: rotate(45deg);
     color: #dc2626;
     cursor: pointer;
+}
+
+.submit-button button {
+    font-family: poppins;
+    font-size: 22px;
+    padding: 5px 25px;
+    background-color: #16a34a;
+    color: white;
+    border: 2px solid green;
+    border-radius: 5px;
+}
+
+.submit-button button:hover {
+    background-color: #15803d;
 }

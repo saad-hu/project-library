@@ -112,10 +112,6 @@ myBook.addBookToLibrary();
 
 
 
-
-
-
-
 function updateIdOfAllCards() {
     let everyCardList = document.querySelectorAll('.card');
     everyCardList.forEach((card) => {
