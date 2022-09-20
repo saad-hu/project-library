@@ -4,11 +4,11 @@
 [Click here](https://saad-hu.github.io/project-library/) for a live demo.
 
 ## Screenshots
-#### Desktop View
+### Desktop View
 ![](/images/library-demo.png)
 
 ![](/images/library-demo-1.png)
-#### Mobile View
+### Mobile View
 ![](/images/library-mob-demo.png)
 
 ![](/images/library-mob-demo-1.png)
